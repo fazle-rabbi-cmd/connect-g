@@ -1,4 +1,50 @@
+
+body{
+    background-color: cornflowerblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.app-container{
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    margin-left: -400px;
+}
+.panel{
+    position: absolute;
+    background-color: lightgoldenrodyellow;
+    border: 8px solid burlywood;
+    z-index: 1;
+}
+
+.header{
+    left: 50%;
+    top: 90px;
+    height: 80px;
+    width: 300px;
+    margin-left: -120px;
+
+}
+
+.header-text{
+    font: 30px;
+    font-weight: bold;
+    font-size: large;
+    width: 200px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+.footer{
+    left: 50%;
+    top: 750px;
+    height: 80px;
+    width: 300px;
+    margin-left: -120px;
+}
 .gameBoard{
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
