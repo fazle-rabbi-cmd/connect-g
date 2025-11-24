@@ -18,7 +18,7 @@ const GAME_STATE_DRAW=3;
 
 const GameBoard = ()=>{
 
-    const [gameBoard, setGameBoard]= useState(Array(16).fill(NO_PLAYER));
+    const [gameBoard, setGameBoard]= useState(Array(NO_CIRCLES).fill(NO_PLAYER));
     const [currentPlayer, setCurrentPlayer]= useState(PLAYER_1);
     const [gameState, setGameState]=useState(GAME_STATE_PLAYING);
     const [winPlayer,setWinPlayer]=useState(NO_PLAYER);
@@ -31,7 +31,7 @@ const GameBoard = ()=>{
 
     const initGame=()=>{
         console.log('init game');
-        setGameBoard(Array(16).fill(NO_PLAYER));
+        setGameBoard(Array(NO_CIRCLES).fill(NO_PLAYER));
         setCurrentPlayer(PLAYER_1);
         setGameState(GAME_STATE_PLAYING);
     }
