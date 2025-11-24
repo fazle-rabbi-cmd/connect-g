@@ -83,7 +83,7 @@ const GameBoard = ()=>{
             {initBoard()}
             
         </div>
-        <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}/>
+        <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}  gameState={gameState}/>
         </>
     ) 
 }
