@@ -3,7 +3,7 @@ import GameCircle from "./GameCircle";
 import "../Game.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import { isDraw, isWinner } from "../helper";
+import { isDraw, isWinner, getComputerMove } from "../helper";
 
 const NO_CIRCLES=16;
 const NO_PLAYER=0;
@@ -33,6 +33,7 @@ const GameBoard = ()=>{
         console.log('init game');
         setGameBoard(Array(16).fill(NO_PLAYER));
         setCurrentPlayer(PLAYER_1);
+        setGameState(GAME_STATE_PLAYING);
     }
 
     const initBoard=()=>{
@@ -41,6 +42,10 @@ const GameBoard = ()=>{
             circles.push(renderCircle(i));
         }
         return circles;
+    }
+
+    const suggestMove=()=>{
+        circleClicked(getComputerMove(gameBoard));
     }
     const circleClicked=(id)=>{
         console.log('circle clicked: '+ id);
@@ -78,7 +83,7 @@ const GameBoard = ()=>{
             {initBoard()}
             
         </div>
-        <Footer onClickEvent={initGame}/>
+        <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}/>
         </>
     ) 
 }
